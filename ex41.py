@@ -7,4 +7,4 @@ def main_one():
 
 if __name__ == '__main__':
     main()
-    main1()
+    main_one()
