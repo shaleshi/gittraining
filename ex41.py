@@ -2,6 +2,7 @@ def main():
     print "hello"
 def main_one():
     print "one"    
+    print "second stmt"
 
 
 
