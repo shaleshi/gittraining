@@ -2,4 +2,8 @@ bin
 develop-eggs
 parts
 eggs
+.installed.cfg
+downloads/
+fake-eggs/
+setup.py~
 
