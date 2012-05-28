@@ -8,5 +8,9 @@ cd Python-2.6.8
 ./configure --prefix=$PREFIX 
 make 
 make install
+cd ..
 rm -fr Python-2.6.8
-echo "Python installation done"
+echo
+echo "Python installed here"
+echo "./usr/bin/python"
+echo
