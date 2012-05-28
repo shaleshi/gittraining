@@ -12,5 +12,7 @@ setup(
     install_requires=['setuptools',
                      'Zope2',
                      'Chameleon'
-		     ],
+		     'grok',
+                     'megrok.jinja',		
+     ],
  )
