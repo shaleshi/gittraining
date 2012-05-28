@@ -11,3 +11,6 @@ Python-2.6.8.tar.bz2
 usr/
 var/*
 output.html
+__pycache__/
+bootstrap.pyc
+
