@@ -2,12 +2,12 @@ bin
 develop-eggs
 parts
 eggs
+tmp/
 .installed.cfg
 downloads/
 fake-eggs/
 setup.py~
 Python-2.6.8.tar.bz2
-Python-2.6.8/
 usr/
-
+var/*
 
