@@ -1,17 +1,23 @@
-#!/bin/bash
-#naga
-PREFIX=`pwd`/usr
-#cd downloads
-wget -c http://www.python.org/ftp/python/2.6.8/Python-2.6.8.tar.bz2
-tar jxvf Python-2.6.8.tar.bz2
-mkdir $PREFIX
-cd Python-2.6.8
-./configure --prefix=$PREFIX 
-make 
+VERSION="2.6.8"
+PYTHON="Python-$VERSION"
+MD5="c6e0420a21d8b23dee8b0195c9b9a125"
+PREFIX="`pwd`/usr"
+DOWNLOAD_PREFIX="http://www.python.org/ftp/python/$VERSION"
+DOWNLOADDIR="downloads"
+
+mkdir -p $DOWNLOADDIR
+cd $DOWNLOADDIR
+wget -c $DOWNLOAD_PREFIX/$PYTHON.tar.bz2
+cd ..
+tar jxvf $DOWNLOADDIR/$PYTHON.tar.bz2
+cd $PYTHON
+./configure --prefix=$PREFIX --enable-unicode=ucs4
+make
 make install
 cd ..
-rm -fr Python-2.6.8
+rm -fr $PYTHON
+
 echo
-echo "Python installed here"
+echo "$PYTHON is installed here:"
 echo "./usr/bin/python"
 echo
