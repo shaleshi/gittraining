@@ -7,7 +7,8 @@ tmp/
 downloads/
 fake-eggs/
 setup.py~
-Python-2.6.8.tar.bz2
+*.tar.bz2
+*.tar.gz
 usr/
 var/*
 output.html
