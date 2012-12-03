@@ -7,4 +7,12 @@ Jenkins Installation
 2.Python installation through th shell script.
   ./installpython.sh -s
 
-3.To install buildout use bootstrap.py
+3.To install buildout use bootstrap.py with python
+  python bootstrap.py
+
+4.Run buildout
+
+
+
+###################################
+sun.java.command
