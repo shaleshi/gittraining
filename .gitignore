@@ -1,4 +1,6 @@
 *.cfg~
 *.sh~
 downloads/
-
+usr/*
+*.xml
+*.key
