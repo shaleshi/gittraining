@@ -7,4 +7,19 @@ DOWNLOADDIR="downloads"
 
 
 mkdir -p $DOWNLOADDIR
+cd $DOWNLOADDIR
+wget -c $DOWNLOAD_PREFIX/$PYTHON.tar.bz2
+cd ..
+tar jxvf $DOWNLOADDIR/$PYTHON.tar.bz2
+cd $PYTHON
+./configure --prefix=$PREFIX --enable-unicode=ucs4
+make
+make install
+cd ..
+rm -fr $PYTHON
+
+echo
+echo "$PYTHON is installed here:"
+echo "./usr/bin/python"
+echo
 
