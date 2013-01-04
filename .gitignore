@@ -1,0 +1,9 @@
+.installed.cfg
+Python-2.6.8.tar.bz2
+bin/
+downloads/
+dummyshop/
+eggs/
+parts/
+usr/
+
