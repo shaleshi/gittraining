@@ -1,3 +1,4 @@
+
 gittraining
 ===========
 https://weblion.psu.edu/trac/weblion/wiki/BuildOut
@@ -6,6 +7,19 @@ Run the bootstrap command with the -s flag: python bootstrap.py -s, which
 means "no site packages".
 
 http://stackoverflow.com site is very good find the error very easily
+=======
+
+Jenkins Installation
+====================
+Preerequesties
+Install
+a.libreadline-dev
+b.zlib1g-dev
+c.libbz2-dev
+d.libssl-dev
+1.Jenkins will be installed through the buildout.
+  Python should be installed if python>2.6 it's better
+
 
 What buildout is
 
