@@ -4,3 +4,10 @@ downloads/
 usr/*
 *.xml
 *.key
+.installed.cfg
+Python-2.6.8.tar.bz2
+bin/
+dummyshop/
+eggs/
+parts/
+
