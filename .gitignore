@@ -10,4 +10,12 @@ bin/
 dummyshop/
 eggs/
 parts/
+.owner
+jobs/
+plugins/
+*.xml.bak
+updates/
+userContent/
+var/
+war/
 
