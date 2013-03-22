@@ -1,0 +1,10 @@
+README.txt
+setup.py
+src/folder/__init__.py
+src/folder/main.py
+src/folder.egg-info/PKG-INFO
+src/folder.egg-info/SOURCES.txt
+src/folder.egg-info/dependency_links.txt
+src/folder.egg-info/not-zip-safe
+src/folder.egg-info/requires.txt
+src/folder.egg-info/top_level.txt

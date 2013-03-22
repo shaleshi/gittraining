@@ -1,0 +1,6 @@
+setuptools
+
+[test]
+pytest
+cov-core
+pytest-cov

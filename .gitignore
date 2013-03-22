@@ -6,4 +6,5 @@ dummyshop/
 eggs/
 parts/
 usr/
-
+develop-eggs/
+var/

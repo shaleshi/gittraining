@@ -1,18 +1,21 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="jiva",
-    version="5.0",
-    author="ZeOmega",
-    author_email="info@zeomega.com",
-    description="Jiva - Care Management Software",
-    packages=find_packages(),
+    name="folder",
+    version="1.0.0",
+    description="Folder creation for testing",
+    author="Sadashiv",
+    url="http://www.sadashivb.blogspot.com",
+    packages=find_packages("src"),
+    package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
-    install_requires=['setuptools',
-                     'Zope2',
-                     'Chameleon'
-		     'grokcore.chameleon',
-                     'megrok.jinja',		
-     ],
- )
+    install_requires=[
+        "setuptools",
+    ],
+    extras_require=dict(
+        test=["pytest",
+              "cov-core",
+              "pytest-cov",
+              ]),
+    )
