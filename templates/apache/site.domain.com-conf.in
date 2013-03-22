@@ -1,0 +1,56 @@
+NameVirtualHost *:${server:port}
+<VirtualHost *:${server:port}>
+ServerName ${server:servername}
+#######
+RewriteEngine on
+###### proxy balancer with apache
+<Proxy balancer://${site_balancer}>
+BalancerMember http://localhost:8001/
+BalancerMember http://localhost:8002/
+BalancerMember http://localhost:8003/
+BalancerMember http://localhost:8004/
+BalancerMember http://localhost:8005/
+BalancerMember http://localhost:8006/
+BalancerMember http://localhost:8007/
+BalancerMember http://localhost:8008/
+BalancerMember http://localhost:8009/
+BalancerMember http://localhost:8010/
+BalancerMember http://localhost:8011/
+BalancerMember http://localhost:8012/
+BalancerMember http://localhost:8013/
+BalancerMember http://localhost:8014/
+BalancerMember http://localhost:8015/
+BalancerMember http://localhost:8016/
+BalancerMember http://localhost:8017/
+BalancerMember http://localhost:8018/
+BalancerMember http://localhost:8019/
+BalancerMember http://localhost:8020/
+</Proxy>
+ProxyPass / balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/cms/ZeUI/VirtualHostRoot/ lbmethod=bybusyness 
+ProxyPassReverse / http://${server:servername}:${server:port}
+######
+
+ProxyPass /cms/main/tcm/Episode/Controller/main/tcm/Episode/Controller/getPageForWorkListforHome balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/VirtualHostRoot/cms/main/tcm/Episode/Controller/main/tcm/Episode/Controller/getPageForWorkListforHome/ lbmethod=bybusyness
+ProxyPassReverse /cms/main/tcm/Episode/Controller/main/tcm/Episode/Controller/getPageForWorkListforHome   http://${server:servername}/cms/main/tcm/Episode/Controller/main/tcm/Episode/Controller/getPageForWorkListforHome
+ 
+ 
+ProxyPass /cms/main/tcm/Episode/Controller/getPageForWorkListforHome  balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/VirtualHostRoot/cms/main/tcm/Episode/Controller/getPageForWorkListforHome/ lbmethod=bybusyness
+ProxyPassReverse /cms/main/tcm/Episode/Controller/getPageForWorkListforHome   http://${server:servername}/cms/main/tcm/Episode/Controller/getPageForWorkListforHome
+ 
+ 
+ProxyPass /cms/main/tcm/Episode/Controller/Activity/Controller/getActivitiesCalendarHome   balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/VirtualHostRoot/cms/main/tcm/Episode/Controller/Activity/Controller/getActivitiesCalendarHome lbmethod=bybusyness
+ProxyPassReverse /cms/main/tcm/Episode/Controller/Activity/Controller/getActivitiesCalendarHome     http://${server:servername}/cms/main/tcm/Episode/Controller/Activity/Controller/getActivitiesCalendarHome
+
+ 
+ProxyPass /cms/Activity/Controller/getActivitiesCalendarHome balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/VirtualHostRoot/cms/Activity/Controller/getActivitiesCalendarHome lbmethod=bybusyness
+ProxyPassReverse /cms/Activity/Controller/getActivitiesCalendarHome   http://${server:servername}/cms/Activity/Controller/getActivitiesCalendarHome
+
+ 
+ProxyPass /cms/main/tcm/Episode/Controller/Alerts/Controller/showMyAlerts   balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/VirtualHostRoot/cms/main/tcm/Episode/Controller/Alerts/Controller/showMyAlerts/ lbmethod=bybusyness
+ProxyPassReverse /cms/main/tcm/Episode/Controller/Alerts/Controller/showMyAlerts balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/VirtualHostRoot/cms/main/tcm/Episode/Controller/Alerts/Controller/showMyAlerts lbmethod=bybusyness
+
+ 
+ProxyPass /cms/Alerts/Controller/showMyAlerts balancer://${site_balancer}/VirtualHostBase/http/${server:servername}:${server:port}/VirtualHostRoot/cms/Alerts/Controller/showMyAlerts lbmethod=bybusyness
+ProxyPassReverse /cms/Alerts/Controller/showMyAlerts  http://${server:servername}/cms/Alerts/Controller/showMyAlerts
+
+</VirtualHost>

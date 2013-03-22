@@ -1,0 +1,35 @@
+#enable deflate on select contents
+
+#AddOutputFilterByType DEFLATE text/html text/plain text/xml
+
+#or enable on all
+
+SetOutputFilter DEFLATE
+
+#compression level (1-9)
+
+DeflateCompressionLevel 7
+
+#logging
+
+#DeflateFilterNote ratio
+
+
+#LogFormat '"%r" %b (%{ratio}n) "%{User-agent}i"' deflate
+
+#CustomLog logs/deflate_log deflate
+
+#or accurate logging
+
+DeflateFilterNote Input instream
+
+DeflateFilterNote Output outstream
+
+DeflateFilterNote Ratio ratio
+
+LogFormat '"%h %l %u %t \"%r\" %{outstream}n/%{instream}n (%{ratio}n%%)' deflate
+#"%{User-agent}i"' deflate
+
+CustomLog logs/deflate_log deflate
+
+

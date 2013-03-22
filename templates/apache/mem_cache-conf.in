@@ -1,0 +1,12 @@
+<IfModule mod_mem_cache.c>
+MCacheMaxObjectCount 13001
+MCacheMaxObjectSize 6400000
+MCacheMaxStreamingBuffer 65536
+MCacheSize 700000
+CacheEnable mem /cms/ZeUI/views/jscript
+CacheEnable mem /cms/ZeUI/views/styles
+CacheEnable mem /cms/ZeUI/views/Images
+CacheEnable mem /cms/ZeUI/images
+CacheEnable mem /cms/Sentinel/SentinelController/views/styles
+CacheEnable mem /cms/TinyMCE/tinymce/jscripts
+</IfModule>
