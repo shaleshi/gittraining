@@ -203,7 +203,7 @@ env = dict(
     PYTHONPATH=setup_requirement_path)
 
 requirement = 'zc.buildout'
-version = options.version
+version = '1.5.2'
 if version is None and not options.accept_buildout_test_releases:
     # Figure out the most recent final version of zc.buildout.
     import setuptools.package_index
