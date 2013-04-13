@@ -1,0 +1,19 @@
+Here we are going to install the nginx[Fileserver]
+
+1.http://nginx.org/download/nginx-1.2.8.tar.gz
+  tar zxvf nginx-1.2.8.tar.gz
+  cd nginx-1.2.8/
+
+2../configure --prefix=/home/user/nginx
+
+3.make;make install
+
+4. Add the conf/nginx.conf autoindex on; and port
+
+5. Nginx will be running access with http://localhost:port/
+
+    Note: If your facing the error 403 Forbidden
+
+          Then open conf/nginx.conf
+
+          First line uncomment the user then replace the nobody with  logged in username
