@@ -18,10 +18,9 @@ d.libssl-dev
 What buildout is
 
 A buildout is a description of a set of parts and software to create and
-assemble them. “Buildout” is often used informally to mean an installed system
-based on such a description. In this document, “buildout” refers to the Python
-package zc.buildout, which follows recipes to retrieve Python packages from
-various repositories and install them on your machine. 
+assemble them. “Buildout”
+
+if pypi goes down better to create the pypi-server
 
 What Buildout is not
 
