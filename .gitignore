@@ -9,3 +9,15 @@ usr/
 develop-eggs/
 var/
 *.pyc
+*.xml
+*.log
+*.*~
+.owner
+*.key
+jobs/
+jre1.6.0_26/
+plugins/
+tmp/
+updates/
+userContent/
+
