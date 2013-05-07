@@ -9,7 +9,7 @@ usr/
 develop-eggs/
 var/
 *.pyc
-*.xml
+*.xml*
 *.log
 *.*~
 .owner

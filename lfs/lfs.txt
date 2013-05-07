@@ -1,0 +1,29 @@
+LFS
+===
+32 bit 4GB slow instllation file size less, exection slow
+64 bit 8GB Fast instllation file size more, exection also fast
+
+LFS and Standards
+The structure of LFS follows Linux standards as closely as possible. The primary standards are:
+• POSIX.1-2008.
+• Filesystem Hierarchy Standard (FHS)
+• Linux Standard Base (LSB) Specificatio
+
+Basics
+tar creation,exrtaction,Makefile,make,make install
+rpm -i pack.rpm
+deb -i pack.deb
+which cmd #find the path for cmd
+locate cmd #Search the cmd in /usr
+./configure --prefix=#installation path default it will install in the /usr
+If something goes wrong while running the configure script, review the config.log file.
+LFS is usually installed on a dedicated partition
+it is a good idea to use a small disk partition as swap space.
+netstat -tupln|grep "ps name"
+To create an ext3 file system on the LFS partition, run the following:
+mke2fs -jv /dev/<xxx>
+mkswap /dev/<yyy>
+Replace <yyy> with the name of the swap partition.
+
+
+
