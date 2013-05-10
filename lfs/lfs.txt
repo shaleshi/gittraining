@@ -14,7 +14,8 @@ tar creation,exrtaction,Makefile,make,make install
 rpm -i pack.rpm
 deb -i pack.deb
 which cmd #find the path for cmd
-locate cmd #Search the cmd in /usr
+locate cmd #Search the cmd in the system Locate command uses the database
+created by updatedb.
 ./configure --prefix=#installation path default it will install in the /usr
 If something goes wrong while running the configure script, review the config.log file.
 LFS is usually installed on a dedicated partition
@@ -24,6 +25,47 @@ To create an ext3 file system on the LFS partition, run the following:
 mke2fs -jv /dev/<xxx>
 mkswap /dev/<yyy>
 Replace <yyy> with the name of the swap partition.
+grep #Search in the file
+find #Find the content in the filesystem.
+awk #Remove duplicate lines using awk.
+vim +143 filename.txt #open the file and got to line no 143
+vim -R /etc/passwd #Open file for read only
+Set env variable
+export env_name=value
+sort #
+diff #
+cat url-list.txt | xargs wget –c #Download all the URLs mentioned in the url-list.txt file
+ls -lh #Display the file in the human redable form
+gzip, bizp2, zip and unzip.
+shutdown
+crontab
+service sshd status #Check the status of the service.
+ps -efH | more #To view the current running process
+top | top command displays the top processes in the system,O or O for up and down
+Mount
+=====
+mkdir /u01
+# mount /dev/sdb1 /u01
+chmod #chmod +x file.txt
+chown oracle:dba dbora.sh #oracle user and dba group
+passwd #Set or change password
+mkdir -p dir1/dir2/dir3/dir4/ #Create the nested directory
+ifconfig #Use ifconfig command to view or configure a network interface on the Linux system
+ifconfig eth0 up/down #stop or start the eth0
+uname -a #Dispaly kernal,host name
+whereis bash #Find the where is bash
+whatis ifconfig #Whatis command displays a single line description about a command.
+man ls #Display the man page of a specific command.
+head/tail buildout.cfg #See the top or bottom 10 lines
+less hugefile.txt | ctr+f ctr+b
+su - USERNAME #Swithc username
+which bash #Finde the which bash
+mysql -u root -p -h IP #To connect to a remote mysql database. This will prompt for a password.
+yum install/update/remove httpd
+rpm -i/u/e pkg.rpm #Install,update,remove or erase
+ping -c 5 gmail.com #Ping a remote host by sending only 5 packets.
+wget #web geturl or download
+
 
 
 
