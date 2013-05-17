@@ -67,7 +67,8 @@ ping -c 5 gmail.com #Ping a remote host by sending only 5 packets.
 wget #web geturl or download
 hkconfig httpd --level 2345 on
 # chkconfig --list httpd
-
+sudo su - zope
+find . -name "*.sh" -print | xargs /bin/rm -f
 
 
 
