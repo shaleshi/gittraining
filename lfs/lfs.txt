@@ -69,6 +69,17 @@ hkconfig httpd --level 2345 on
 # chkconfig --list httpd
 sudo su - zope
 find . -name "*.sh" -print | xargs /bin/rm -f
+ls *.xml | xargs -l -i cp {} /home/user
+{} is the default argument list marker. You need to use {} this with various
+command which take more than two arguments at a time
+Opening port in a linux firewall
+
+iptables -I INPUT -p tcp --dport 12345 --syn -j ACCEPT
+
+iptables -I INPUT -p udp --dport 12345 -j ACCEPT
+
+service iptables save
+lsblk 
 
 
 
