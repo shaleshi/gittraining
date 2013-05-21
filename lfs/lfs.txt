@@ -1,3 +1,5 @@
+http://www.tldp.org/LDP/sag/html/index.html
+http://www.tldp.org/LDP/nag2/index.html
 LFS
 ===
 32 bit 4GB slow instllation file size less, exection slow
@@ -79,6 +81,30 @@ iptables -I INPUT -p tcp --dport 12345 --syn -j ACCEPT
 iptables -I INPUT -p udp --dport 12345 -j ACCEPT
 
 service iptables save
+
+The kernel is the heart of the operating system. In fact, it is often
+mistakenly considered to be the operating system itself, but it is not. An
+operating system provides provides many more services than a plain kernel.
+
+The Linux kernel consists of several important parts: process management,
+memory management, hardware device drivers, filesystem drivers, network
+management,
+
+user/normal programs
+---------------------
+ps mgmt memory mgmt          kernal
+Floppy disk etc 
+---------------------
+Hadware
+
+runlevel
+========
+Runlevel 0 is defined as ``system halt''
+Runlevel 1 is defined as ``single user mode''
+Runlevel 3 is defined as "multi user" because it is the runlevel
+that the system boot into under normal day to day conditions
+Runlevel 5 is typically the same as 3 except that a GUI gets started also
+Runlevel 6 is defined as ``system reboot''
 lsblk 
 
 
