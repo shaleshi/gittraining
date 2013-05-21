@@ -1,0 +1,1 @@
+http://www.6tech.org/2013/01/how-to-install-puppet-open-source-on-centos-6-3/
