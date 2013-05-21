@@ -105,6 +105,8 @@ Runlevel 3 is defined as "multi user" because it is the runlevel
 that the system boot into under normal day to day conditions
 Runlevel 5 is typically the same as 3 except that a GUI gets started also
 Runlevel 6 is defined as ``system reboot''
+=======
+apropos - search the whatis database for strings
 lsblk 
 
 
