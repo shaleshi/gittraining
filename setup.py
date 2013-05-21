@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="folder",
-    version="1.0.0",
+    version='1.2.1',
     description="Folder creation for testing",
     author="Sadashiv",
     url="http://www.sadashivb.blogspot.com",
