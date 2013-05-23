@@ -10,3 +10,181 @@ Community
 Help Improve This Site
 Documentation Version
 
+Files - Puppet language files are called manifests, and are named with the .pp file extension.
+Compilation and Catalogs
+Puppet compiles manifests into a catalog, which is only valid for a single
+node and which contains no ambiguous logic.
+a catalog will be in memory as a Ruby object, transmitted as JSON, and
+persisted to disk as YAML. The catalog format used by this version of Puppet
+is not documented and does not have a spec.
+If they request a catalog and the master fails to compile one, they will
+re-use their cached catalog(puppet.conf)
+Ordering
+
+Puppet’s language is mostly declarative: 
+Acceptable Characters in Names
+Variables
+Classes and Types
+Modules
+Parameters
+Tags
+Resources
+Nodes
+
+Resources
+=========
+Resources are the fundamental unit for modeling system configurations.
+
+Syntax
+
+# A resource declaration:
+file { '/etc/passwd':
+        ensure => file,
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0600',
+    }
+
+The general form of a resource declaration is:
+
+The resource type, in lower-case
+An opening curly brace
+The title, which is a string
+A colon
+Optionally, any number of attribute and value pairs, each
+of which consists of:
+An attribute name, which is a bare word
+A => (arrow, fat comma, or hash rocket)
+A value, which can be any data type, depending on what the attribute requires A trailing comma (note
+that the comma is optional after the final attribute/value pair) Optionally, a semicolon, followed by
+another title, colon, and attribute block A closing curly brace Note that, in the Puppet language,
+whitespace is fungible.
+
+Relationships and Ordering
+==========================
+    package { 'openssh-server':
+      ensure => present,
+      before => File['/etc/ssh/sshd_config'],
+    }
+
+    file { '/etc/ssh/sshd_config':
+      ensure  => file,
+      mode    => 600,
+      source  => 'puppet:///modules/sshd/sshd_config',
+      require => Package['openssh-server'],
+    }
+
+Refresh- refreshonly => true or refresh
+
+Resource Defaults
+=================
+ Exec {
+        path        => '/usr/bin:/bin:/usr/sbin:/sbin',
+        environment => 'RUBYLIB=/opt/puppet/lib/ruby/site_ruby/1.8/',
+        logoutput   => true,
+        timeout     => 180,
+    }
+
+Variables
+
+$a = "Sada\n"
+Reassignment - Unlike most other languages, Puppet only allows a given
+variable to be assigned once within a given scope.
+
+Scope
+=====
+# site.pp
+$variable = "Hi!"
+class example {
+notify {"Message from elsewhere: $variable":}
+}
+include example
+#puppet apply site.pp
+
+Conditional Statements
+======================
+Puppet 3 supports “if” and “unless” statements, case statements, and selectors.
+    if $is_virtual == 'true' {
+      warning('Tried to include class ntp on virtual machine; this node may be misclassified.')
+    }
+    elsif $operatingsystem == 'Darwin' {
+      warning('This NTP module does not yet work on our Mac laptops.')
+    }
+    else {
+      include ntp
+    }
+
+#“Unless” statements work like reversed “if” statements.
+unless $memorysize > 1024 {
+      $maxclient = 500
+    }
+
+case $operatingsystem {
+      'Solaris':          { include role::solaris }
+      'RedHat', 'CentOS': { include role::redhat  }
+      /^(Debian|Ubuntu)$/:{ include role::debian  }
+      default:            { include role::generic }
+    }
+Selector statements are similar to case statements, but return a value instead
+of executing a code block.
+
+$rootgroup = $osfamily ? {
+        'Solaris'          => 'wheel',
+        /(Darwin|FreeBSD)/ => 'wheel',
+        default            => 'root',
+    }
+
+    file { '/etc/passwd':
+      ensure => file,
+      owner  => 'root',
+      group  => $rootgroup,
+    }
+
+Expressions
+===========
+Operators
+Boolean Operators
+Airthmatic
+
+Classes
+=======
+Classes are named blocks of Puppet code, which are stored in modules for later use and are not applieduntil they are 
+invoked by name.
+
+require/include
+
+# A class with no parameters
+    class base::linux {
+      file { '/etc/passwd':
+        owner => 'root',
+        group => 'root',
+        mode  => '0644',
+      }
+      file { '/etc/shadow':
+        owner => 'root',
+        group => 'root',
+        mode  => '0440',
+      }
+    }
+
+The general form of a class definition is:
+
+The class keyword
+The name of the class
+An optional set of parameters, which consists of:
+An opening parenthesis
+A comma-separated list of parameters, each of which consists of:
+A new variable name, including the $ prefix
+An optional equals (=) sign and default value (any data type)
+An optional trailing comma after the last parameter
+A closing parenthesis
+Optionally, the inherits keyword followed by a single class name
+An opening curly brace
+A block of arbitrary Puppet code, which generally contains at least one resource declaration
+A closing curly brace
+
+You can remove an attribute’s previous value without setting a new one by
+overriding it with the special value undef:
+you can add to the existing values instead of replacing them by using the +>
+(“plusignment”) keyword instead of the standard => hash rocket:
+
