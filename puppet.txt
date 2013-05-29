@@ -1,5 +1,9 @@
 http://www.6tech.org/2013/01/how-to-install-puppet-open-source-on-centos-6-3/
+puppet agent --test
+https://downloads.puppetlabs.com/windows/
+
 Puppet
+======
 Puppet Enterprise
 MCollective
 Puppet Dashboard
@@ -100,6 +104,7 @@ notify {"Message from elsewhere: $variable":}
 }
 include example
 #puppet apply site.pp
+puppet apply -e 'notify { foo:message => "Hello word!"}'
 
 Conditional Statements
 ======================
@@ -188,3 +193,36 @@ overriding it with the special value undef:
 you can add to the existing values instead of replacing them by using the +>
 (“plusignment”) keyword instead of the standard => hash rocket:
 
+Defined Resource Types
+======================
+
+# /etc/puppetlabs/puppet/modules/apache/manifests/vhost.pp
+    define apache::vhost ($port, $docroot, $servername = $title, $vhost_name = '*') {
+      include apache # contains Package['httpd'] and Service['httpd']
+      include apache::params # contains common config settings
+      $vhost_dir = $apache::params::vhost_dir
+      file { "${vhost_dir}/${servername}.conf":
+        content => template('apache/vhost-default.conf.erb'), 
+          # This template can access all of the parameters and variables from above.
+        owner   => 'www',
+        group   => 'www',
+        mode    => '644',
+        require => Package['httpd'],
+        notify  => Service['httpd'],
+      }
+    }
+
+Node Defintion
+==============
+
+Node definitions should go in the site manifest (site.pp).
+# /etc/puppetlabs/puppet/manifests/site.pp
+# Import every file in /etc/puppetlabs/puppet/manifests/nodes/
+# (Usually, each file contains one node definition.)
+import 'nodes/*.pp'
+# Import several nodes from a single file
+import 'extra_nodes.pp'
+syntax
+node "wwe.example.com"{
+    include apache
+}

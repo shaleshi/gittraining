@@ -107,6 +107,7 @@ Runlevel 5 is typically the same as 3 except that a GUI gets started also
 Runlevel 6 is defined as ``system reboot''
 =======
 apropos - search the whatis database for strings
+:.!ls cp
 lsblk 
 
 
