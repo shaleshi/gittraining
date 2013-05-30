@@ -1,0 +1,1 @@
+git co master -- linux/* #checkout the sinle file of multiple file from other branch
