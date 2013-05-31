@@ -335,9 +335,6 @@ apropos - search the whatis database for strings
 :.!ls cp
 lsblk 
 
-
-
-
 $ at 1145 jan 31
  at> cc -o foo foo.c
 /usr/local -- locally installed packages
@@ -349,3 +346,17 @@ The /proc filesystem contains a illusionary filesystem. It does not exist on a d
 
 Kernal Module
 lsmod
+
+jfs
+JFS is a journaled filesystem designed by IBM to to work in high performance environments
+/proc/kcore file, it doesn't take any disk space.
+Kilobyte - KB 1024 Bytes
+Megabyte - MB	1024 KBs
+Gigabyte - GB	1024 MBs
+Terabyte - TB	1024 GBs
+Petabyte - PB	1024 TBs
+Exabyte - EB	1024 PBs
+Zettabyte - ZB	1024 EBs
+Yottabyte - YB	1024 ZBs
+
+mount /dev/hda2 /home
