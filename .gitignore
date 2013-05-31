@@ -20,4 +20,4 @@ plugins/
 tmp/
 updates/
 userContent/
-
+src/folder.egg-info/PKG-INFO
