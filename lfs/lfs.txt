@@ -392,5 +392,6 @@ that partition, and then start the code in that boot sector.
 Then the kernel will try to mount the root filesystem. 
 After this, the kernel starts the program init (located in /sbin/init) in the background 
 (this will always become process number 1).
-/etc/lolo,/etc/grub
+/etc/lilo,/etc/grub
+shutdow -h now
 
