@@ -394,4 +394,11 @@ After this, the kernel starts the program init (located in /sbin/init) in the ba
 (this will always become process number 1).
 /etc/lilo,/etc/grub
 shutdow -h now
+init
+====
+
+The kernel looks for init in a few locations that have been historically used for it, but the proper location for it 
+(on a Linux system) is /sbin/init. If the kernel can't find init, it tries to run /bin/sh
+After the system is properly up, init restarts getty for each terminal after a user has logged out 
+(so that the next user can log in). init also adopts orphan processes:
 
