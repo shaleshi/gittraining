@@ -360,3 +360,8 @@ Zettabyte - ZB	1024 EBs
 Yottabyte - YB	1024 ZBs
 
 mount /dev/hda2 /home
+unmount /dev/hda2
+unmount /usr
+create swapping it will be helpful
+The part of the hard disk that is used as virtual memory is called the swap space.
+The kernel will write the contents of a currently unused block of memory to the hard disk so that the memory can be used for another purpose
