@@ -385,4 +385,12 @@ For PCs, the computer (its BIOS) reads in the first sector (called the boot sect
 The bootstrap loader is contained within this sector.
 After Linux has been loaded, it initializes the hardware and device drivers, and then runs init. init starts other 
 processes to allow users to log in, and do things.
+GRUB, the GRand Unifying Bootloader.
+When booting from the hard disk, the code in the master boot record will examine the partition table (also in the master
+boot record), identify the active partition (the partition that is marked to be bootable), read the boot sector from 
+that partition, and then start the code in that boot sector.
+Then the kernel will try to mount the root filesystem. 
+After this, the kernel starts the program init (located in /sbin/init) in the background 
+(this will always become process number 1).
+/etc/lolo,/etc/grub
 
