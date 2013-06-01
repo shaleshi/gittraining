@@ -339,9 +339,9 @@ $ at 1145 jan 31
  at> cc -o foo foo.c
 /usr/local -- locally installed packages
 The /var contains data that is changed when the system is running normally.
-The /proc filesystem contains a illusionary filesystem. It does not exist on a disk. Instead, the kernel creates it in memory.
+The /proc filesystem contains a illusionary filesystem. It does not exist on a disk. Instead, the kernel creates 
+it in memory. 
 /proc/1
-
     A directory with information about process number 1
 
 Kernal Module
@@ -362,12 +362,27 @@ Yottabyte - YB	1024 ZBs
 mount /dev/hda2 /home
 unmount /dev/hda2
 unmount /usr
+
 create swapping it will be helpful
 The part of the hard disk that is used as virtual memory is called the swap space.
-The kernel will write the contents of a currently unused block of memory to the hard disk so that the memory can be used for another purpose
-mkswap /extra-swap 1024
+The kernel will write the contents of a currently unused block of memory to the hard disk so that the memory can be used 
+for another purpose mkswap /extra-swap 1024
 All the swap spaces that are used automatically with swapon -a can be removed from use with swapoff -a;
 
+System-Monitoring
+=================
 System Resources -- top,iostat,ps,vmstat and lsof.
 File system usage -- df, du -hs,
 Monitoring the users - who,w
+
+Boots And Shutdowns
+booting name comes from an image of the computer pulling itself up from its bootstraps, but the act itself slightly 
+more realistic.
+During bootstrapping, the computer first loads a small piece of code called the bootstrap loader, which in turn loads
+and starts the operating system. The bootstrap loader is usually stored in a fixed location on a hard disk or a floppy.
+
+For PCs, the computer (its BIOS) reads in the first sector (called the boot sector) of a floppy or hard disk.
+The bootstrap loader is contained within this sector.
+After Linux has been loaded, it initializes the hardware and device drivers, and then runs init. init starts other 
+processes to allow users to log in, and do things.
+
