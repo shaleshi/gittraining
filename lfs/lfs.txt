@@ -402,3 +402,15 @@ The kernel looks for init in a few locations that have been historically used fo
 After the system is properly up, init restarts getty for each terminal after a user has logged out 
 (so that the next user can log in). init also adopts orphan processes:
 
+system-config-users
+useradd - adduser
+user:x:123:345:/home:/bin/bash
+123-userid 345 groupid x shadow link one user can have multiple group 
+usermod - modify user
+groupadd
+groupusermod
+chgrp grpname filename -- will change the group
+chown user:group file - will change the user and group
+
+
+
