@@ -416,4 +416,8 @@ chmod 750 file
 7-user 5-groug 0-others
 gpasswd -A bob projectx
 
+mkfs fdisk fsck
+mount unmount
+df du
+
 
