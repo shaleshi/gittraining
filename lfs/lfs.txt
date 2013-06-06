@@ -412,5 +412,8 @@ groupusermod
 chgrp grpname filename -- will change the group
 chown user:group file - will change the user and group
 
+chmod 750 file
+7-user 5-groug 0-others
+gpasswd -A bob projectx
 
 
