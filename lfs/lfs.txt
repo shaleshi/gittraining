@@ -419,5 +419,5 @@ gpasswd -A bob projectx
 mkfs fdisk fsck
 mount unmount
 df du
-
+/
 
