@@ -1,5 +1,7 @@
 http://www.tldp.org/LDP/sag/html/index.html
 http://www.tldp.org/LDP/nag2/index.html
+http://linux-sec.net/
+http://www.linux-sec.net/Firewall/Tools/
 LFS
 ===
 32 bit 4GB slow instllation file size less, exection slow
@@ -421,3 +423,10 @@ mount unmount
 df du
 /
 
+linux security
+ip:255:255:255:255
+mask
+default gateway:door to open
+telnet,ftp,ssh
+packates,protocals,address[dest]
+using firewall,inetd,xinetd you can control access
